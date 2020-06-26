@@ -1,19 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
 
-    
-      <h1>This is our wonderful!!</h1>
-    
-      <h2>tabitha's test</h2>
+  constructor() {
+    super();
+    this.state = {
+      someThing: []
+    }
+  }
 
-    </div>
-  );
+  componentDidMount() {
+    axios('http://api.tvmaze.com/search/shows', {
+      params: {
+        q: 'a'
+      }
+    }).then(function (res) {
+        console.log(res.data);
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+
+
+        <h1>This is our wonderful!!</h1>
+
+        <h2>tabitha's test</h2>
+
+      </div>
+    );
+  }
 }
 
 export default App;
-
-// HELLO FRIENDS
