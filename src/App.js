@@ -4,6 +4,7 @@ import './App.css';
 import SearchBar from './SearchBar';
 import Slider from './Slider';
 import Gallery from './Gallery';
+import noImage from './assets/noImage.jpg';
 
 class App extends Component {
 
@@ -32,17 +33,30 @@ class App extends Component {
       const searchResults = [];
 
       for (let key in data) {
-        searchResults.push({
-          id: data[key].show.id,
-          title: data[key].show.name,
-          image: data[key].show.image.original,
-          summary: data[key].show.summary
-        })
+        if(data[key].show.image !== null) {
+          searchResults.push({
+            id: data[key].show.id,
+            title: data[key].show.name,
+            image: data[key].show.image.medium,
+            summary: data[key].show.summary
+          })
+        } else {
+          searchResults.push({
+            id: data[key].show.id,
+            title: data[key].show.name,
+            image: noImage,
+            summary: data[key].show.summary
+          })
+        }
+        
+
       }
 
       this.setState({
         relevantShows: searchResults,
       })
+
+      console.log(searchResults)
     });
   }
 
@@ -53,6 +67,7 @@ class App extends Component {
         <Slider />
         <SearchBar callApi={this.callApi}/>
         <Gallery relevantShows={this.state.relevantShows}></Gallery>
+        <footer><a href="https://ruiwd.me">Jerry Dong</a>, <a href="https://lawrencehebia.com">Lawrence Hebia</a>, <a href="http://www.shondamoshis.com">Shonda Moshis</a>, <a href="http://www.tabithapoeze.com">Tabitha Poeze</a> &copy; 2020</footer>
       </div>
     );
   }
