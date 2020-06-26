@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/project-six/static/css/main.92545b3a.chunk.css",
+    "main.js": "/project-six/static/js/main.cbd8b154.chunk.js",
+    "main.js.map": "/project-six/static/js/main.cbd8b154.chunk.js.map",
+    "runtime-main.js": "/project-six/static/js/runtime-main.54c1688a.js",
+    "runtime-main.js.map": "/project-six/static/js/runtime-main.54c1688a.js.map",
+    "static/js/2.dd470b07.chunk.js": "/project-six/static/js/2.dd470b07.chunk.js",
+    "static/js/2.dd470b07.chunk.js.map": "/project-six/static/js/2.dd470b07.chunk.js.map",
+    "index.html": "/project-six/index.html",
+    "precache-manifest.93c12aeac92701cb1f87ac14a5e04028.js": "/project-six/precache-manifest.93c12aeac92701cb1f87ac14a5e04028.js",
+    "service-worker.js": "/project-six/service-worker.js",
+    "static/css/main.92545b3a.chunk.css.map": "/project-six/static/css/main.92545b3a.chunk.css.map",
+    "static/js/2.dd470b07.chunk.js.LICENSE.txt": "/project-six/static/js/2.dd470b07.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54c1688a.js",
+    "static/js/2.dd470b07.chunk.js",
+    "static/css/main.92545b3a.chunk.css",
+    "static/js/main.cbd8b154.chunk.js"
+  ]
+}
