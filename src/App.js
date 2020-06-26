@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
+import SearchBar from './SearchBar';
 
 function App() {
   return (
     <div className="App">
 
-    
-      <h1>This is our wonderful!!</h1>
-    
-      <h2>tabitha's test</h2>
+    <SearchBar />
 
     </div>
   );
