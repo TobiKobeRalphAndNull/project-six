@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import SearchBar from './SearchBar';
 
 class App extends Component {
+
 
   constructor() {
     super();
@@ -10,6 +12,7 @@ class App extends Component {
       someThing: []
     }
   }
+
 
   componentDidMount() {
     axios('http://api.tvmaze.com/search/shows', {
@@ -24,6 +27,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <SearchBar />
 
 
         <h1>This is our wonderful!!</h1>
