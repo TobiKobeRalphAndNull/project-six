@@ -21,7 +21,7 @@ class App extends Component {
   callApi = (search) => {
     axios({
       method: "GET",
-      url: "http://api.tvmaze.com/search/shows",
+      url: "https://api.tvmaze.com/search/shows",
       responseType: "json",
       params: {
         q: search,
