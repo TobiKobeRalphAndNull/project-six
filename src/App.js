@@ -35,7 +35,7 @@ class App extends Component {
         searchResults.push({
           id: data[key].show.id,
           title: data[key].show.name,
-          image: data[key].show.image.medium,
+          image: data[key].show.image.original,
           summary: data[key].show.summary
         })
       }
