@@ -1,0 +1,11 @@
+html {font-size: calc(5px + (10 - 5) * (100vw - 320px) / (1600 - 320))}
+body {font-size: 1.6rem;margin: 0}
+h1, h2, h3, h4, h5, h6, p, ul {margin: 0}
+ul {padding: 0; list-style-type: none}
+a {text-decoration: none;color: #000;display: inline-block}
+h1,h2,h3,h4,h5,h6 {
+  @include headerFont;
+}
+p,a{
+    @include bodyFont;
+}
