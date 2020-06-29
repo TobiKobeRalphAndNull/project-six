@@ -48,15 +48,11 @@ class App extends Component {
             summary: data[key].show.summary
           })
         }
-        
-
       }
 
       this.setState({
         relevantShows: searchResults,
       })
-
-      console.log(searchResults)
     });
   }
 
