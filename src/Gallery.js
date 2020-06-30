@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 
 class Gallery extends Component {
     render() {
@@ -10,9 +10,10 @@ class Gallery extends Component {
                         <li><button className="tvImgButton" key={show.id}>
                             <img src={show.image} alt={`Poster for ${show.title}`}></img>
                             <p className="tv Title">{show.title}</p>
-                        </button></li>
+                        </button>
+                        </li>
                     )
-                })} 
+                })}
             </ul>
         )
     }
