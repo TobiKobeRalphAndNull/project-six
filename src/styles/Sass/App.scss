@@ -1,0 +1,21 @@
+@import 'setup';
+@import 'mixins';
+@import 'typography';
+@import 'footer';
+
+$pink:#f77a9b;
+$blue:#00b6f9;
+$green:#c4e39c;
+
+
+.searchResuts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}

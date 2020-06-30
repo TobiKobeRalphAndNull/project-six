@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.scss';
+import './styles/Sass/App.scss';
 import SearchBar from './SearchBar';
 import Slider from './Slider';
 import Gallery from './Gallery';
@@ -63,7 +63,7 @@ class App extends Component {
         <Slider />
         <SearchBar callApi={this.callApi}/>
         <Gallery relevantShows={this.state.relevantShows}></Gallery>
-        <footer><a href="https://ruiwd.me">Jerry Dong</a>, <a href="https://lawrencehebia.com">Lawrence Hebia</a>, <a href="http://www.shondamoshis.com">Shonda Moshis</a>, <a href="http://www.tabithapoeze.com">Tabitha Poeze</a> &copy; 2020</footer>
+        <footer><p><a href="https://ruiwd.me">Jerry Dong</a>, <a href="https://lawrencehebia.com">Lawrence Hebia</a>, <a href="http://www.shondamoshis.com">Shonda Moshis</a>, <a href="http://www.tabithapoeze.com">Tabitha Poeze</a> &copy; 2020</p></footer>
       </div>
     );
   }
