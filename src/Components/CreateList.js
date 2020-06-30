@@ -14,12 +14,10 @@ class CreateList extends Component {
     e.preventDefault();
 
     const createdList = firebase.database().ref(this.state.inputTitle);
-    createdList.push(
-      'Start adding in your TV shows')
-    // {
-    //   Rating: this.state.inputRating,
-    //   Title: this.state.inputTitle
-    // }
+    createdList.push({
+      rating: 'You get to select your rating!',
+      title: 'Start adding in your shows!'
+    })
   }
 
   handleChange = (e) => {

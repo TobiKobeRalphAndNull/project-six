@@ -287,4 +287,12 @@ footer {
   position: absolute;
   bottom: 0;
 }
+
+.selectList {
+  visibility: hidden;
+}
+
+.selectList.show {
+  visibility: visible;
+}
 /*# sourceMappingURL=App.css.map */

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './styles/Sass/App.scss';
-import SearchBar from './SearchBar';
-import Slider from './Slider';
-import Gallery from './Gallery';
+import SearchBar from './Components/SearchBar'
+import Slider from './Components/Slider';
+import Gallery from './Components/Gallery';
 import noImage from './assets/noImage.jpg';
+
 
 class App extends Component {
 
@@ -38,14 +39,16 @@ class App extends Component {
             id: data[key].show.id,
             title: data[key].show.name,
             image: data[key].show.image.medium,
-            summary: data[key].show.summary
+            summary: data[key].show.summary,
+            rating: data[key].show.rating.average
           })
         } else {
           searchResults.push({
             id: data[key].show.id,
             title: data[key].show.name,
             image: noImage,
-            summary: data[key].show.summary
+            summary: data[key].show.summary,
+            rating: data[key].show.rating.average
           })
         }
       }
