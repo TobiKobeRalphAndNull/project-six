@@ -62,9 +62,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>My Watchlist</h1>
+        <header>
+        <h1 className="flash">My Watchlist</h1>
+          <SearchBar callApi={this.callApi} />
+        </header>
         <Slider />
-        <SearchBar callApi={this.callApi}/>
         <Gallery relevantShows={this.state.relevantShows}></Gallery>
         <footer><p><a href="https://ruiwd.me">Jerry Dong</a>, <a href="https://lawrencehebia.com">Lawrence Hebia</a>, <a href="http://www.shondamoshis.com">Shonda Moshis</a>, <a href="http://www.tabithapoeze.com">Tabitha Poeze</a> &copy; 2020</p></footer>
       </div>

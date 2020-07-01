@@ -34,7 +34,7 @@ class VoteButtons extends Component {
   render() {
     return(
         <Fragment>
-            <button onClick={this.handleUpvote}>Upvote</button>
+        <button onClick={this.handleUpvote}>Upvote</button>
             <button onClick={this.handleDownvote}>Downvote</button>
         </Fragment>
     )

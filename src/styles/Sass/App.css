@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Lato&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -271,6 +272,55 @@ h1, h2, h3, h4, h5, h6 {
 p, a {
   font-family: 'Lato';
   font-weight: 400;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.flash {
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes flash {
+  from {
+    color: #00b6f9;
+  }
+  to {
+    color: #f77a9b;
+  }
+}
+
+@keyframes flash {
+  from {
+    color: #00b6f9;
+  }
+  to {
+    color: #f77a9b;
+  }
+}
+
+header {
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .searchResuts {
