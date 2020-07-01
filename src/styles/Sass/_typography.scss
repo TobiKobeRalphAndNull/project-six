@@ -8,25 +8,3 @@ ul {padding: 0; list-style-type: none}
 
 a {text-decoration: none;color: #000;display: inline-block}
 
-h1,h2,h3,h4,h5,h6 {
-  @include headerFont;
-}
-p,a{
-    @include bodyFont;
-}
-h1{
-  font-size: 6rem;
-}
-.flash {
-   animation-name: flash;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-play-state: running;
-}
-
-@keyframes flash {
-    from {color: #00b6f9;}
-    to {color: #f77a9b;}
-}
