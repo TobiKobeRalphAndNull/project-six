@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import './styles/Sass/App.scss';
 import SearchBar from './Components/SearchBar'
 import Slider from './Components/Slider';
 import Gallery from './Components/Gallery';
 import noImage from './assets/noImage.jpg';
-
 
 class App extends Component {
 
@@ -61,13 +60,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>My Watchlist</h1>
-        <Slider />
-        <SearchBar callApi={this.callApi}/>
-        <Gallery relevantShows={this.state.relevantShows}></Gallery>
+      <Fragment>
+        <header>
+          <div className="wrapper">
+            <h1>My Watchlist</h1>
+            <SearchBar callApi={this.callApi} />
+          </div>
+        </header>
+        <section>
+          <Slider />
+        </section>
+        <section className='gallery wrapper'>
+          <Gallery relevantShows={this.state.relevantShows} />
+        </section>
         <footer><p><a href="https://ruiwd.me">Jerry Dong</a>, <a href="https://lawrencehebia.com">Lawrence Hebia</a>, <a href="http://www.shondamoshis.com">Shonda Moshis</a>, <a href="http://www.tabithapoeze.com">Tabitha Poeze</a> &copy; 2020</p></footer>
-      </div>
+      </Fragment>
     );
   }
 }

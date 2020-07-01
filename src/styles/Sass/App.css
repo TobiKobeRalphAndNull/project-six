@@ -288,11 +288,55 @@ footer {
   bottom: 0;
 }
 
-.selectList {
-  visibility: hidden;
+header {
+  background-color: #c4e39c;
 }
 
-.selectList.show {
-  visibility: visible;
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 0px 40px 0px;
+}
+
+.showTitleSearch {
+  margin-left: 40px;
+}
+
+.showTitleSearch input {
+  min-width: 30vw;
+  padding: 15px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.showTitleSearch button {
+  background-color: #f77a9b;
+  padding: 15px 30px 15px 30px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.showTitleSearch input, .showTitleSearch button {
+  border: none;
+}
+
+.gallery {
+  padding: 40px 0px 40px 0px;
+}
+
+.upvote, .downvote {
+  border: none;
+  background: none;
+  font-size: 3rem;
+}
+
+.downvote {
+  color: red;
 }
 /*# sourceMappingURL=App.css.map */

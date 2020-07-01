@@ -1,6 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import firebase from './firebase';
 
+// Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
+
 class VoteButtons extends Component {
 
   handleUpvote  = () => {
@@ -34,8 +39,8 @@ class VoteButtons extends Component {
   render() {
     return(
         <Fragment>
-            <button onClick={this.handleUpvote}>Upvote</button>
-            <button onClick={this.handleDownvote}>Downvote</button>
+        <button className='upvote' onClick={this.handleUpvote}><FontAwesomeIcon icon={faArrowCircleUp} /></button>
+        <button className='downvote' onClick={this.handleDownvote}><FontAwesomeIcon icon={faArrowCircleDown} /></button>
         </Fragment>
     )
   }

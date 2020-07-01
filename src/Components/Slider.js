@@ -53,7 +53,7 @@ class Slider extends Component {
       <Fragment>
         {this.state.myListTitles.map((s) => {
           return (
-            <div>
+            <div className="sliderList">
             <h2>{s.actualListTitle}</h2>
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord == s.actualListTitle) {

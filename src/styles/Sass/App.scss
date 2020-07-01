@@ -20,10 +20,67 @@ footer {
   bottom: 0;
 }
 
-.selectList {
-  visibility:hidden;
+// .selectList {
+//   visibility:hidden;
+// }
+
+// .selectList.show {
+//   visibility:visible 
+// }
+
+// .sliderList, .createList {
+//   display: none;
+// }
+
+// ^ temporarily hiding the slider to focus on the main page
+
+header {
+  background-color: $green;
 }
 
-.selectList.show {
-  visibility:visible 
+header .wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 40px 0px 40px 0px;
+}
+
+// search bar styles
+
+.showTitleSearch {
+  margin-left: 40px;
+}
+
+.showTitleSearch input {
+  min-width: 30vw;
+  padding: 15px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.showTitleSearch button {
+  background-color: $pink;
+  padding: 15px 30px 15px 30px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.showTitleSearch input, .showTitleSearch button {
+  border: none;
+}
+
+// gallery styles
+
+.gallery {
+  padding: 40px 0px 40px 0px;
+}
+
+// vote buttons 
+
+.upvote, .downvote {
+  border: none;
+  background: none;
+  font-size: 3rem;
+}
+
+.downvote {
+  color: red;
 }
