@@ -56,7 +56,7 @@ class Slider extends Component {
             <div className="sliderList">
             <h2>{s.actualListTitle}</h2>
               {this.state.myLists.map((item) => {
-                if (item.listTitleRecord == s.actualListTitle) {
+                if (item.listTitleRecord === s.actualListTitle) {
                   return (
                     <li>
                       <h3>{item.title}</h3>
