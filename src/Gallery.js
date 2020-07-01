@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.scss';
+import './styles/Sass/App.scss';
 
 class Gallery extends Component {
     render() {
