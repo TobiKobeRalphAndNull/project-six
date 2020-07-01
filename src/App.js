@@ -63,7 +63,7 @@ class App extends Component {
       <Fragment>
         <header>
           <div className="wrapper">
-            <h1>My Watchlist</h1>
+            <h1 className="flash">My Watchlist</h1>
             <SearchBar callApi={this.callApi} />
           </div>
         </header>

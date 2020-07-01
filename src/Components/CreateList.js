@@ -30,7 +30,7 @@ class CreateList extends Component {
     return(
       <form className='createList' onSubmit={this.createList} action="submit">
         <input name="inputTitle" onChange={this.handleChange} value={this.state.inputTitle} type="text"/>
-        <button>Create List</button>
+        <button className="inputButton">Create List</button>
       </form>
     )
   }

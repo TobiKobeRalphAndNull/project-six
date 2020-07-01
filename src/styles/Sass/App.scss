@@ -1,12 +1,10 @@
 @import 'setup';
 @import 'mixins';
 @import 'typography';
+@import 'header';
 @import 'footer';
-
-$pink:#f77a9b;
-$blue:#00b6f9;
-$green:#c4e39c;
-
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Lato&display=swap');
 
 .searchResuts {
   display: grid;
@@ -15,10 +13,7 @@ $green:#c4e39c;
   gap: 1rem;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-}
+
 
 // .selectList {
 //   visibility:hidden;
@@ -34,36 +29,25 @@ footer {
 
 // ^ temporarily hiding the slider to focus on the main page
 
-header {
-  background-color: $green;
-}
-
-header .wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 40px 0px 40px 0px;
-}
-
 // search bar styles
 
 .showTitleSearch {
   margin-left: 40px;
 }
 
-.showTitleSearch input {
+input {
   min-width: 30vw;
   padding: 15px;
   border-radius: 10px 0px 0px 10px;
 }
 
-.showTitleSearch button {
+.inputButton {
   background-color: $pink;
   padding: 15px 30px 15px 30px;
   border-radius: 0px 10px 10px 0px;
 }
 
-.showTitleSearch input, .showTitleSearch button {
+input, .inputButton {
   border: none;
 }
 
@@ -83,4 +67,12 @@ header .wrapper {
 
 .downvote {
   color: red;
+}
+.inputButton:hover, .inputButton:focus{
+  background:$blue;
+  cursor: pointer;
+}
+a:hover,a:focus,.upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus{
+  color:$blue;
+  cursor: pointer;
 }

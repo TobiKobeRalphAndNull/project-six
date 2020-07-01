@@ -1,3 +1,11 @@
-footer{
-    
+@import 'variables';
+footer {
+//   position: absolute;
+//   bottom: 0;
+  background:$green;
+  margin:0;
+  height:10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Lato&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -230,7 +231,6 @@ body {
   position: relative;
   text-align: center;
   min-height: 100vh;
-  padding-bottom: 50px;
 }
 
 .wrapper {
@@ -268,24 +268,46 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-p, a {
+p, a, input, select, button {
   font-family: 'Lato';
   font-weight: 400;
 }
 
-.searchResuts {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  gap: 1rem;
+h1 {
+  font-size: 6rem;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
+.flash {
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes flash {
+  from {
+    color: #00b6f9;
+  }
+  to {
+    color: #f77a9b;
+  }
+}
+
+@keyframes flash {
+  from {
+    color: #00b6f9;
+  }
+  to {
+    color: #f77a9b;
+  }
 }
 
 header {
@@ -300,29 +322,57 @@ header .wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 40px 0px 40px 0px;
 }
 
+footer {
+  background: #c4e39c;
+  margin: 0;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.searchResuts {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 1rem;
+}
+
 .showTitleSearch {
   margin-left: 40px;
 }
 
-.showTitleSearch input {
+input {
   min-width: 30vw;
   padding: 15px;
   border-radius: 10px 0px 0px 10px;
 }
 
-.showTitleSearch button {
+.inputButton {
   background-color: #f77a9b;
   padding: 15px 30px 15px 30px;
   border-radius: 0px 10px 10px 0px;
 }
 
-.showTitleSearch input, .showTitleSearch button {
+input, .inputButton {
   border: none;
 }
 
@@ -338,5 +388,15 @@ header .wrapper {
 
 .downvote {
   color: red;
+}
+
+.inputButton:hover, .inputButton:focus {
+  background: #00b6f9;
+  cursor: pointer;
+}
+
+a:hover, a:focus, .upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus {
+  color: #00b6f9;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

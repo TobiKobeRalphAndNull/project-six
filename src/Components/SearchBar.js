@@ -30,7 +30,7 @@ class SearchBar extends Component{
                 <form className='showTitleSearch' onSubmit={this.handleSubmit} action="submit">
                     <label className='sr-only' htmlFor="searchByName">Search TV Show By Name:</label>
                     <input value={this.state.userInput} onChange={this.handleChange} name="searchByName" type="text" placeholder="Search TV Show By Name"/>
-                    <button><FontAwesomeIcon icon={faSearch} /></button>
+                    <button className="inputButton"><FontAwesomeIcon icon={faSearch} /></button>
                 </form>
             </div>
         )
