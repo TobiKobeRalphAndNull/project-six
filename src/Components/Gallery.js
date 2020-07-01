@@ -9,11 +9,12 @@ class Gallery extends Component {
                 { this.props.relevantShows.map((show) => {
                     return (
                         <li key={show.id}>
-                            <AddTitle showTitle={show.title} showRating={show.rating}/>
-                            <button className="tvImgButton">
+                            {/* Do we need this button?? It doesn't appear to be used. */}
+                            {/* <button className="tvImgButton"> */}
                                 <img src={show.image} alt={`Poster for ${show.title}`}></img>
                                 <p className="tv Title">{show.title}</p>
-                            </button>
+                            {/* </button> */}
+                            <AddTitle showTitle={show.title} showRating={show.rating} />
                         </li>
                     )
                 })}
