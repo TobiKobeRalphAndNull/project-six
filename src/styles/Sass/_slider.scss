@@ -4,19 +4,57 @@
 section.slider {
   position: absolute;
   top: 0;
-  bottom: 0;
+  min-height: 100%;
   background-color:$green;
   border-right: #ffffff 1px solid;
-  padding: 0px 20px;
-  left: -2000px;
+  padding: 30px 0px;
+  width: 40%;
+  left: -1000px;
+  transition: all 1s;
+  display: none;
 }
 
 section.slider.show {
   left: 0;
+  display: block;
+}
+
+.hamburgerMenu {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10;
+  font-size: 3rem;
+}
+
+.hamburgerMenu:hover,
+.hamburgerMenu:focus {
+  cursor: pointer;
+  color: $blue;
 }
 
 div.sliderList {
   margin: 30px 0;
+}
+
+div.listTitleContainer {
+  display: flex;
+  justify-content: center;
+}
+
+button.expandList {
+  display: inline-block;
+  border: none;
+  background-color: $green;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+button.expandList:hover,
+button.expandList:focus {
+  cursor: pointer;
+  color: $blue;
 }
 
 li.listItem {
@@ -26,5 +64,13 @@ li.listItem {
 
 h2.sliderTitle {
   font-size: 3rem;
-  margin-top: 30px;
+}
+
+form.createList input {
+  min-width: 0;
+  width: 60%;
+}
+
+form.createList button {
+  width: 30%;
 }

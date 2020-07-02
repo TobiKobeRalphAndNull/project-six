@@ -5,6 +5,8 @@ import SearchBar from './Components/SearchBar'
 import Slider from './Components/Slider';
 import Gallery from './Components/Gallery';
 import noImage from './assets/noImage.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 class App extends Component {
 
@@ -58,10 +60,15 @@ class App extends Component {
     });
   }
 
+  showMyLists =() => {
+    document.querySelector('section.slider').classList.toggle('show')
+  }
+
   render() {
     return (
       <Fragment>
         <header>
+          <FontAwesomeIcon icon={faBars} className="hamburgerMenu" onClick={this.showMyLists}/>
           <div className="wrapper">
             <h1 className="flash">My Watchlist</h1>
             <SearchBar callApi={this.callApi} />

@@ -2,6 +2,8 @@ import React, {Component, Fragment} from 'react';
 import firebase from './firebase';
 import CreateList from './CreateList';
 import VoteButtons from './VoteButtons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 // import { findAllByPlaceholderText } from '@testing-library/react';
 
 class Slider extends Component {
@@ -48,6 +50,10 @@ class Slider extends Component {
     })
   }  
 
+  // expandList = () => {
+  //   document.querySelectorAll(`li.`)
+  // }
+
   render() {
     return (
       <Fragment>
@@ -55,11 +61,14 @@ class Slider extends Component {
         {this.state.myListTitles.map((s) => {
           return (
             <div className="sliderList">
-            <h2>{s.actualListTitle}</h2>
+              <div className="listTitleContainer">
+                <h2>{s.actualListTitle}</h2>
+                <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button>
+              </div>
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord === s.actualListTitle) {
                   return (
-                    <li className="listItem">
+                    <li className={`listItem ${s.actualListTitle}`}>
                       <h3>{item.title}</h3>
                       <p>{item.rating}</p>
                       <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle}/>
