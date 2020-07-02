@@ -55,9 +55,17 @@ class Slider extends Component {
   // expandList = () => {
   //   document.querySelectorAll(`li.`)
   // }
-  handleDelete = (list, key) => {
+
+  // Used to delete a show or a list, depending on what items are passed
+  handleDelete = (list, key=null) => {
     const dbRef = firebase.database().ref(list);
-    dbRef.child(key).remove();
+    // If no key is passed in, delete the list
+    if (key === null) {
+      dbRef.remove();
+    } else {
+      // If a key was passed, delete the child item
+      dbRef.child(key).remove();
+    }
   }
 
   render() {
@@ -69,7 +77,8 @@ class Slider extends Component {
             <div className="sliderList">
               <div className="listTitleContainer">
                 <h2>{s.actualListTitle}</h2>
-                {/* <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button> */}
+                <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button>
+                <button className="delete" onClick={() => this.handleDelete(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
               </div>
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord === s.actualListTitle) {
