@@ -327,29 +327,36 @@ header .wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 40px 0px 40px 0px;
 }
 
-@media (max-width: 1260px) {
-  header {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-}
-
 @media (max-width: 750px) {
-  header {
+  header .wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  form {
+    margin-top: 5%;
+  }
+  input {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 550px) {
+  input {
+    width: 60vw;
   }
 }
 
@@ -547,6 +554,13 @@ span.closeModal {
   right: 0;
   display: none;
   background-color: rgba(255, 255, 255, 0.5);
+
+.delete {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .detailsModal {
@@ -627,7 +641,7 @@ input, .inputButton {
   cursor: pointer;
 }
 
-a:hover, a:focus, .upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus {
+.delete:hover, .delete:focus, a:hover, a:focus, .upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus {
   color: #00b6f9;
   cursor: pointer;
 }
