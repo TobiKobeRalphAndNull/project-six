@@ -15,7 +15,6 @@ class CreateList extends Component {
 
     const createdList = firebase.database().ref(this.state.inputTitle);
     createdList.push({
-      rating: 'You get to select your rating!',
       title: 'Start adding in your shows!'
     })
   }

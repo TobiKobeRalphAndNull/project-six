@@ -15,7 +15,11 @@ class VoteButtons extends Component {
 
     currentRating.on('value', (response) => {
         let data = response.val();
-        newData = data+1;
+        if (data < 10) {
+          newData = data+1;
+        } else {
+          newData = 10
+        }
     })
     
     currentRating.set(newData)    
@@ -29,7 +33,11 @@ class VoteButtons extends Component {
 
     currentRating.on('value', (response) => {
         let data = response.val();
-        newData = data - 1;
+        if (data > 0) {
+          newData = data - 1;
+        } else {
+          newData = 0
+        }
     })
 
     currentRating.set(newData)
