@@ -19,6 +19,12 @@ section.slider.show {
   display: block;
 }
 
+// Display the lists in a grid format, evenly spaced
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .hamburgerMenu {
   position: absolute;
   top: 30px;
@@ -73,4 +79,22 @@ form.createList input {
 
 form.createList button {
   width: 30%;
+}
+
+// Tablets and smaller
+@media (max-width: 768px) {
+  section.slider {
+    width: 80%;
+  }
+}
+
+// XL screen phones and smaller
+@media (max-width: 550px) {
+  section.slider {
+    width: 80%;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
 }
