@@ -4,6 +4,7 @@ import CreateList from './CreateList';
 import VoteButtons from './VoteButtons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faMinus } from '@fortawesome/free-solid-svg-icons'
 // import { findAllByPlaceholderText } from '@testing-library/react';
 
 class Slider extends Component {
@@ -12,7 +13,8 @@ class Slider extends Component {
     super();
     this.state={
       myListTitles:[],
-      myLists:[]
+      myLists:[],
+      expand: true
     }
   }
 
@@ -52,9 +54,17 @@ class Slider extends Component {
     })
   }  
 
-  // expandList = () => {
-  //   document.querySelectorAll(`li.`)
-  // }
+  expandList = (listTitle) => {
+      for (let t of document.getElementsByClassName(listTitle)) {
+        t.style.display = 'block';
+      }
+  }
+
+  reduceList = (listTitle) => {
+    for (let t of document.getElementsByClassName(listTitle)) {
+      t.style.display = 'none';
+    }
+  }
 
   // Used to delete a show or a list, depending on what items are passed
   handleDelete = (list, key=null) => {
@@ -77,13 +87,14 @@ class Slider extends Component {
             <div className="sliderList">
               <div className="listTitleContainer">
                 <h2>{s.actualListTitle}</h2>
-                <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button>
+                <button className="expandList" onClick={() => this.expandList(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
+                <button className="reduceList" onClick={() => this.reduceList(s.actualListTitle)}><FontAwesomeIcon icon={faMinus} /></button>
                 <button className="delete" onClick={() => this.handleDelete(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
               </div>
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord === s.actualListTitle && item.title != 'Start adding in your shows!') {
                   return (
-                    <li key={item.showKey} className={`listItem ${s.actualListTitle}`}>
+                    <li key={item.showKey} className={s.actualListTitle}>
                       <h3>{item.title}</h3>
                       <p>{item.rating}</p><button className="delete" onClick={() => this.handleDelete(s.actualListTitle, item.showKey)}><FontAwesomeIcon icon={faPlus} /></button>
                       <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle}/>

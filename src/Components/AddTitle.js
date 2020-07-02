@@ -41,11 +41,12 @@ class AddTitle extends Component {
   handleChange = (e) => {
     if (e.target.value !== '') {
     const pushedList = firebase.database().ref(e.target.value)
-      pushedList.push({
-        rating: 0,
-        title: this.props.showTitle
-      })
-    }
+        pushedList.push({
+          rating: 0,
+          title: this.props.showTitle
+        })
+      }
+    
   }
 
   render() {
