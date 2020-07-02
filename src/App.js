@@ -41,7 +41,11 @@ class App extends Component {
             title: data[key].show.name,
             image: data[key].show.image.medium,
             summary: data[key].show.summary,
-            rating: data[key].show.rating.average
+            rating: data[key].show.rating.average,
+            language: data[key].show.language,
+            // country: data[key].show.network.country.name,
+            genre: data[key].show.genres[0],
+            // network: data[key].show.network.name
           })
         } else {
           searchResults.push({
@@ -49,12 +53,35 @@ class App extends Component {
             title: data[key].show.name,
             image: noImage,
             summary: data[key].show.summary,
-            rating: data[key].show.rating.average
+            rating: data[key].show.rating.average,
+            language: data[key].show.language,
+            // country: data[key].show.country.name,
+            genre: data[key].show.genres[0],
+            // network: data[key].show.network.name
           })
         }
       }
 
       this.setState({
+        relevantShows: searchResults,
+      })
+    }, (error) => {
+      // If error/no results received, show user error tile
+      console.log('Error:', error)
+      const searchResults = [];
+      searchResults.push({
+        id: 1,
+        title: "Sorry, no result/error received.",
+        image: noImage,
+        summary: "N/A",
+        rating: "N/A",
+        language: "N/A",
+        // country: data[key].show.country.name,
+        genre: "N/A",
+        // network: data[key].show.network.name
+      })
+      
+        this.setState({
         relevantShows: searchResults,
       })
     });
@@ -67,6 +94,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        
         <header>
           <FontAwesomeIcon icon={faBars} className="hamburgerMenu" onClick={this.showMyLists}/>
           <div className="wrapper">

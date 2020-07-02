@@ -34,6 +34,12 @@ section.gallery {
         text-transform: uppercase;
     }
 
+    p.modal,
+    .modal p {
+        text-transform: none;
+        color: black;
+    }
+
     .noResults {
         color: black;
     }

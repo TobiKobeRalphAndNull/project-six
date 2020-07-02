@@ -32,11 +32,11 @@ class AddTitle extends Component {
     })  
   }
 
-  handleClick = (e) => {
-    e.preventDefault();
+  // handleClick = (e) => {
+  //   e.preventDefault();
     
-    document.querySelector(`.selectList.${this.props.show.title}`).classList.toggle('show')
-  }
+  //   document.querySelector(`.selectList.${this.props.show.title}`).classList.toggle('show')
+  // }
 
   handleChange = (e) => {
     if (e.target.value !== '') {

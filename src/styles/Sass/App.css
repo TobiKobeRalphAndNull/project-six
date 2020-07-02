@@ -374,6 +374,16 @@ section.gallery {
   text-transform: uppercase;
 }
 
+.searchResuts p.modal,
+.searchResuts .modal p {
+  text-transform: none;
+  color: black;
+}
+
+.searchResuts .noResults {
+  color: black;
+}
+
 .searchResuts form {
   padding: 1rem 0;
 }
@@ -499,6 +509,21 @@ form.createList input {
 
 form.createList button {
   width: 30%;
+}
+
+.detailsModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #f77a9b;
+  width: 70%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.detailsModal img {
+  width: 200px;
 }
 
 .showTitleSearch {
