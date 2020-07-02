@@ -28,7 +28,7 @@ class CreateList extends Component {
   render(){
     return(
       <form className='createList' onSubmit={this.createList} action="submit">
-        <input name="inputTitle" onChange={this.handleChange} value={this.state.inputTitle} type="text"/>
+        <input name="inputTitle" className='createList' placeholder="Name your new list" onChange={this.handleChange} value={this.state.inputTitle} type="text"/>
         <button className="inputButton">Create List</button>
       </form>
     )
