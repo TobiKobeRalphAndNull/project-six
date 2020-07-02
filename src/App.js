@@ -67,7 +67,7 @@ class App extends Component {
             <SearchBar callApi={this.callApi} />
           </div>
         </header>
-        <section>
+        <section className="slider">
           <Slider />
         </section>
         <section className='gallery wrapper'>

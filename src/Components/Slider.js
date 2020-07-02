@@ -51,6 +51,7 @@ class Slider extends Component {
   render() {
     return (
       <Fragment>
+        <h2 className="sliderTitle">My TV Show Lists</h2>
         {this.state.myListTitles.map((s) => {
           return (
             <div className="sliderList">
@@ -58,7 +59,7 @@ class Slider extends Component {
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord === s.actualListTitle) {
                   return (
-                    <li>
+                    <li className="listItem">
                       <h3>{item.title}</h3>
                       <p>{item.rating}</p>
                       <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle}/>
