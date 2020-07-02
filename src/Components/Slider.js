@@ -81,7 +81,7 @@ class Slider extends Component {
                 <button className="delete" onClick={() => this.handleDelete(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
               </div>
               {this.state.myLists.map((item) => {
-                if (item.listTitleRecord === s.actualListTitle) {
+                if (item.listTitleRecord === s.actualListTitle && item.title != 'Start adding in your shows!') {
                   return (
                     <li key={item.showKey} className={`listItem ${s.actualListTitle}`}>
                       <h3>{item.title}</h3>

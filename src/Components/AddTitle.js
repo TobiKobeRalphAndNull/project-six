@@ -51,8 +51,6 @@ class AddTitle extends Component {
   render() {
     return(
       <form>
-        {/* <button onClick={this.handleClick}>&#43;</button> */}
-        {/* ^^ Do we need this button?  */}
         <select className={''} onChange={this.handleChange}>
         <option selected disabled value={''}>Add to List</option>    
           {this.state.myListTitles.map((item) => {
