@@ -55,6 +55,10 @@ class Slider extends Component {
   // expandList = () => {
   //   document.querySelectorAll(`li.`)
   // }
+  handleDelete = (list, key) => {
+    const dbRef = firebase.database().ref(list);
+    dbRef.child(key).remove();
+  }
 
   render() {
     return (
@@ -70,9 +74,9 @@ class Slider extends Component {
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord === s.actualListTitle) {
                   return (
-                    <li className={`listItem ${s.actualListTitle}`}>
+                    <li key={item.showKey} className={`listItem ${s.actualListTitle}`}>
                       <h3>{item.title}</h3>
-                      <p>{item.rating}</p>
+                      <p>{item.rating}</p><button className="delete" onClick={() => this.handleDelete(s.actualListTitle, item.showKey)}><FontAwesomeIcon icon={faPlus} /></button>
                       <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle}/>
                     </li>
                   )
