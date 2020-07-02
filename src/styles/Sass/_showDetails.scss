@@ -1,15 +1,55 @@
 @import 'variables';
 
+button,
+.hamburgerMenu,
+a,
+span.closeModal {
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.modalBackground {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+}
+
 .detailsModal {
   position: fixed;
-  top: 50%;
+  top: -2000px;
   left: 50%;
   background-color: $pink;
   width: 70%;
   transform: translate(-50%, -50%);
-  visibility: hidden;
+  padding: 25px;
+  transition: all .5s;
+
+  span.closeModal {
+    position: absolute;
+    font-size: 2rem;
+    top: 15px;
+    right: 15px;
+    transform: rotate(45deg);
+  }
+
+  span.closeModal:hover,
+  span.closeModal:focus {
+    color: $blue;
+  }
 
   img {
     width: 200px;
   }
+}
+
+.detailsModal.show {
+  top: 50%;
+}
+
+.modalBackground.show {
+  display: block;
 }

@@ -94,9 +94,10 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        
         <header>
-          <FontAwesomeIcon icon={faBars} className="hamburgerMenu" onClick={this.showMyLists}/>
+          <div className="hamburgerMenu">
+            <FontAwesomeIcon icon={faBars} onClick={this.showMyLists}/>
+          </div>
           <div className="wrapper">
             <h1 className="flash">My Watchlist</h1>
             <SearchBar callApi={this.callApi} />

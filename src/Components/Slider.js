@@ -65,7 +65,7 @@ class Slider extends Component {
             <div className="sliderList">
               <div className="listTitleContainer">
                 <h2>{s.actualListTitle}</h2>
-                <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button>
+                {/* <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button> */}
               </div>
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord === s.actualListTitle) {

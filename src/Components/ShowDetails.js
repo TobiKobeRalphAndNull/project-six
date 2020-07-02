@@ -1,4 +1,6 @@
-import React, {Component , Fragment} from 'react';
+import React, {Component, Fragment} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 class ShowDetails extends Component {
     
@@ -6,19 +8,24 @@ class ShowDetails extends Component {
     return {__html: this.props.showDetails.summary};
   }
   
-  // function MyComponent() {
-  //   return <div dangerouslySetInnerHTML={createMarkup()} />;
-  // }
+  closeModal = () => {
+    document.querySelector(`.detailsModal.show`).classList.remove('show');
+    document.querySelector(`.modalBackground.show`).classList.remove('show')
+  }
 
   render() {
     return (
-      <div className="detailsModal">
-        <h2>{this.props.showDetails.title}</h2>
-        <h3>{this.props.showDetails.rating}</h3>
-        <p className="modal">{this.props.showDetails.genre}</p>
-        <img src={this.props.showDetails.image} alt={`Poster for ${this.props.showDetails.title}`}></img>
-        <div className="modal" dangerouslySetInnerHTML={this.createSummary()} />
-      </div>
+      <Fragment>
+        <div className='modalBackground'></div>
+        <div className={`detailsModal modal${this.props.showDetails.id}`}>
+          <span className="closeModal" onClick={this.closeModal}><FontAwesomeIcon icon={faPlus} /></span>
+          <h2>{this.props.showDetails.title}</h2>
+          <h3>&#x2605; {this.props.showDetails.rating}/10</h3>
+          <p className="modal">{this.props.showDetails.genre}</p>
+          <img src={this.props.showDetails.image} alt={`Poster for ${this.props.showDetails.title}`}></img>
+          <div className="modal" dangerouslySetInnerHTML={this.createSummary()} />
+        </div>
+      </Fragment>
     )
   }
 }
