@@ -26,10 +26,6 @@
 // search bar styles
 
 
-.showTitleSearch {
-  margin-left: 40px;
-}
-
 input {
   min-width: 30vw;
   padding: 15px;
@@ -66,7 +62,7 @@ input, .inputButton {
   background:$blue;
   cursor: pointer;
 }
-a:hover,a:focus,.upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus{
+.delete:hover, .delete:focus, a:hover,a:focus,.upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus{
   color:$blue;
   cursor: pointer;
 }
