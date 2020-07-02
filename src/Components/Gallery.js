@@ -4,6 +4,7 @@ import AddTitle from './AddTitle';
 import ShowDetails from './ShowDetails';
 
 class Gallery extends Component {
+
     render() {
         return (
             <Fragment>    
@@ -12,10 +13,10 @@ class Gallery extends Component {
                         (<p className="noResults">No results found.</p>) :
                         (this.props.relevantShows.map((show) => {
                             return (
-                                <Fragment>                                    
+                                <Fragment>                 
                                     <ShowDetails showDetails={show}/>
                                     <li key={show.id}>
-                                        <button onClick={this.handleClick} className="tvImgButton">
+                                        <button onClick={() => {document.querySelector(`.modal${show.id}`).classList.add('show');document.querySelector(`.modalBackground`).classList.add('show')}} className="tvImgButton">
                                             <img
                                             src={show.image}
                                             alt={`Poster for ${show.title}`}
