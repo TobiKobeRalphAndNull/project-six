@@ -43,9 +43,11 @@ class Slider extends Component {
         }
       }
 
+      const sortedPush = showPush.sort((a, b) => (a.rating > b.rating) ? -1 : 1);
+
       this.setState({
         myListTitles: listTitlePush,
-        myLists: showPush,
+        myLists: sortedPush,
       })
     })
   }  
