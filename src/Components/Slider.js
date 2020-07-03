@@ -82,6 +82,7 @@ class Slider extends Component {
     return (
       <Fragment>
         <h2 className="sliderTitle">My TV Show Lists</h2>
+      <div className="gridContainer">
         {this.state.myListTitles.map((s) => {
           return (
             <div className="sliderList">
@@ -105,6 +106,7 @@ class Slider extends Component {
             </div>  
           )
         })}
+        </div>
         <CreateList />
       </Fragment>
     )

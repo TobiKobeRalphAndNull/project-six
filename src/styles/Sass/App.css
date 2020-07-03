@@ -474,6 +474,13 @@ section.slider.show {
   left: 0;
 }
 
+.gridContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
 .hamburgerMenu {
   position: fixed;
   top: 30px;
@@ -528,6 +535,10 @@ h2.sliderTitle {
   font-size: 3rem;
 }
 
+form.createList {
+  margin-top: 20px;
+}
+
 form.createList input {
   min-width: 0;
   width: 60%;
@@ -535,6 +546,31 @@ form.createList input {
 
 form.createList button {
   width: 30%;
+}
+
+.delete,
+.deleteList {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  section.slider {
+    width: 80%;
+  }
+}
+
+@media (max-width: 550px) {
+  section.slider {
+    width: 90%;
+  }
+  .gridContainer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 button,
@@ -554,13 +590,6 @@ span.closeModal {
   right: 0;
   display: none;
   background-color: rgba(255, 255, 255, 0.5);
-
-.delete {
-  background: none;
-  border: none;
-  font-size: 3rem;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
 }
 
 .detailsModal {
@@ -600,10 +629,6 @@ span.closeModal {
 
 .modalBackground.show {
   display: block;
-}
-
-.showTitleSearch {
-  margin-left: 40px;
 }
 
 input {
