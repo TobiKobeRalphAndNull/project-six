@@ -41,18 +41,17 @@ class AddTitle extends Component {
   handleChange = (e) => {
     if (e.target.value !== '') {
     const pushedList = firebase.database().ref(e.target.value)
-      pushedList.push({
-        rating: 0,
-        title: this.props.showTitle
-      })
-    }
+        pushedList.push({
+          rating: 0,
+          title: this.props.showTitle
+        })
+      }
+    
   }
 
   render() {
     return(
       <form>
-        {/* <button onClick={this.handleClick}>&#43;</button> */}
-        {/* ^^ Do we need this button?  */}
         <select className={''} onChange={this.handleChange}>
         <option selected disabled value={''}>Add to List</option>    
           {this.state.myListTitles.map((item) => {
