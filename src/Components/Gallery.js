@@ -5,6 +5,7 @@ import ShowDetails from './ShowDetails';
 
 class Gallery extends Component {
 
+    // to append relevant show details to page and allow for modals
     render() {
         return (
             <Fragment>    

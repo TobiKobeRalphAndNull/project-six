@@ -17,10 +17,12 @@ class App extends Component {
     }
   }
 
+  // Call to show gallery to user on load
   componentDidMount() {
-    this.callApi('dragon');
+    this.callApi('Survivor');
   }
 
+  // Main API call
   callApi = (search) => {
     axios({
       method: "GET",
@@ -30,10 +32,9 @@ class App extends Component {
         q: search,
       },
     }).then((res) => {
+      // Take response and break down into more-usable structure
       const data = res.data;
-
       const searchResults = [];
-
       for (let key in data) {
         if(data[key].show.image !== null) {
           searchResults.push({
@@ -43,9 +44,7 @@ class App extends Component {
             summary: data[key].show.summary,
             rating: data[key].show.rating.average,
             language: data[key].show.language,
-            // country: data[key].show.network.country.name,
             genre: data[key].show.genres[0],
-            // network: data[key].show.network.name
           })
         } else {
           searchResults.push({
@@ -55,18 +54,15 @@ class App extends Component {
             summary: data[key].show.summary,
             rating: data[key].show.rating.average,
             language: data[key].show.language,
-            // country: data[key].show.country.name,
             genre: data[key].show.genres[0],
-            // network: data[key].show.network.name
           })
         }
       }
-
       this.setState({
         relevantShows: searchResults,
       })
+      // If error received, show user error tile by adding error tile to state
     }, (error) => {
-      // If error received, show user error tile
       console.log('Error:', error)
       const searchResults = [];
       searchResults.push({
@@ -76,19 +72,17 @@ class App extends Component {
         summary: "N/A",
         rating: "N/A",
         language: "N/A",
-        // country: data[key].show.country.name,
         genre: "N/A",
-        // network: data[key].show.network.name
       })
-      
-        this.setState({
+      this.setState({
         relevantShows: searchResults,
       })
     });
   }
 
+  // Hide/expose slider with list of shows
   showMyLists =() => {
-    document.querySelector('section.slider').classList.toggle('show')
+    document.querySelector('section.slider').classList.toggle('show');
   }
 
   render() {
@@ -98,7 +92,7 @@ class App extends Component {
           <div className="hamburgerMenu">
             <FontAwesomeIcon icon={faBars} onClick={this.showMyLists}/>
           </div>
-          <div className="wrapper">
+          <div className="headerContent">
             <h1 className="flash">My Watchlist</h1>
             <SearchBar callApi={this.callApi} />
           </div>

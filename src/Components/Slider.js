@@ -4,8 +4,7 @@ import CreateList from './CreateList';
 import VoteButtons from './VoteButtons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faMinus } from '@fortawesome/free-solid-svg-icons'
-// import { findAllByPlaceholderText } from '@testing-library/react';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons'
 
 class Slider extends Component {
 
@@ -19,16 +18,21 @@ class Slider extends Component {
   }
 
   componentDidMount(){
+    // reference firebase
     const dbRef = firebase.database().ref();
 
     dbRef.on('value', (response) => {
 
+    // get values from firebase database
       const data = response.val();
 
+    // new array for list titles
       const listTitlePush = [];
 
+    // new array for shows
       const showPush = [];
 
+    // pushing relevant info for list titles and shows into respective arrays
       for (let key in data) {
         let listTitle = key
         let next = data[key]
@@ -44,7 +48,8 @@ class Slider extends Component {
           })
         }
       }
-
+      
+      // used to order the shows by rating
       const sortedPush = showPush.sort((a, b) => (a.rating > b.rating) ? -1 : 1);
 
       this.setState({
@@ -54,16 +59,12 @@ class Slider extends Component {
     })
   }  
 
-  expandList = (listTitle) => {
-      for (let t of document.getElementsByClassName(listTitle)) {
-        t.style.display = 'block';
-      }
-  }
-
-  reduceList = (listTitle) => {
+  // If the small down arrow is clicked expand or minimize the list of shows
+    expandList = (listTitle) => {
     for (let t of document.getElementsByClassName(listTitle)) {
-      t.style.display = 'none';
+      t.classList.toggle('show');
     }
+    document.querySelector(`.arrow${listTitle}`).classList.toggle('show')
   }
 
   // Used to delete a show or a list, depending on what items are passed
@@ -82,20 +83,22 @@ class Slider extends Component {
     return (
       <Fragment>
         <h2 className="sliderTitle">My TV Show Lists</h2>
+        <CreateList />
       <div className="gridContainer">
+        {/* map through array of list titles to return individual list titles */}
         {this.state.myListTitles.map((s) => {
           return (
             <div className="sliderList">
               <div className="listTitleContainer">
+                <button className='collapseList' onClick={() => this.expandList(s.actualListTitle)}><FontAwesomeIcon className={`collapseList arrow${s.actualListTitle}`} icon={faSortDown} /></button>
                 <h2>{s.actualListTitle}</h2>
-                <button className="expandList" onClick={() => this.expandList(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
-                <button className="reduceList" onClick={() => this.reduceList(s.actualListTitle)}><FontAwesomeIcon icon={faMinus} /></button>
                 <button className="delete" onClick={() => this.handleDelete(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
               </div>
+              {/* map through array of shows and match them with respsective list titles to return shows within relevant list */}
               {this.state.myLists.map((item) => {
                 if (item.listTitleRecord === s.actualListTitle && item.title != 'Start adding in your shows!') {
                   return (
-                    <li key={item.showKey} className={s.actualListTitle}>
+                    <li key={item.showKey} className={`tvList ${s.actualListTitle}`}>
                       <h3>{item.title}</h3>
                       <p>{item.rating}</p><button className="delete" onClick={() => this.handleDelete(s.actualListTitle, item.showKey)}><FontAwesomeIcon icon={faPlus} /></button>
                       <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle}/>
@@ -107,7 +110,6 @@ class Slider extends Component {
           )
         })}
         </div>
-        <CreateList />
       </Fragment>
     )
   }

@@ -1,27 +1,26 @@
 html {font-size: calc(5px + (10 - 5) * (100vw - 320px) / (1600 - 320))}
 body {font-size: 1.6rem;margin: 0}
 h1, h2, h3, h4, h5, h6, p, ul {margin: 0}
-ul {padding: 0; list-style-type: none}
-a {text-decoration: none;color: #000;display: inline-block}
+ul   {padding: 0; list-style-type: none}
+a    {text-decoration: none;color: #000;display: inline-block}
 h1,h2,h3,h4,h5,h6 {
-  @include headerFont;
+    @include headerFont;
 }
 p,a,input,select,button{
     @include bodyFont;
 }
-h1{
-  margin-left: 100px;
-  font-size: 6rem;
+h1 {
+    margin-left: 100px;
+    font-size: 6rem;
 }
 .flash {
-   animation-name: flash;
+    animation-name: flash;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: running;
 }
-
 @keyframes flash {
     from {color: #00b6f9;}
     to {color: #f77a9b;}

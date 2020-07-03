@@ -12,13 +12,17 @@ class AddTitle extends Component {
   }
 
   componentDidMount() {
+    // referencing firebase
     const dbRef = firebase.database().ref();
 
+    // create array for list titles
     const listTitleArray = [];
 
     dbRef.on('value', (response) => {
+      // clear the array
       listTitleArray.length = 0;
 
+      // push each available list title into the new array
       const data = response.val();
       for (let key in data) {
         listTitleArray.push({
@@ -32,13 +36,8 @@ class AddTitle extends Component {
     })  
   }
 
-  // handleClick = (e) => {
-  //   e.preventDefault();
-    
-  //   document.querySelector(`.selectList.${this.props.show.title}`).classList.toggle('show')
-  // }
-
   handleChange = (e) => {
+    // retrieve the tv show the user wants to add to a list and push respective info to firebase at intended list as per user's intentions
     if (e.target.value !== '') {
     const pushedList = firebase.database().ref(e.target.value)
         pushedList.push({
@@ -53,7 +52,8 @@ class AddTitle extends Component {
     return(
       <form>
         <select className={''} onChange={this.handleChange}>
-        <option selected disabled value={''}>Add to List</option>    
+        <option selected disabled value={''}>Add to List</option>   
+          {/* map through array of user inputted list titles and return them to the dropdown menu so that users can add tv shows to lists */} 
           {this.state.myListTitles.map((item) => {
               return (
                 <option value={item.listTitle}>{item.listTitle}</option>

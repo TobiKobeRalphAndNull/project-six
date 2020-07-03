@@ -3,30 +3,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 class ShowDetails extends Component {
-    
+  // Used to create summary from information in response from API call
   createSummary = () => {
-    return {__html: this.props.showDetails.summary};
-  }
-  
+    return { __html: this.props.showDetails.summary };
+  };
+
+  // Used to close modal containing TV show information
   closeModal = () => {
-    document.querySelector(`.detailsModal.show`).classList.remove('show');
-    document.querySelector(`.modalBackground.show`).classList.remove('show')
-  }
+    document.querySelector(`.detailsModal.show`).classList.remove("show");
+    document.querySelector(`.modalBackground.show`).classList.remove("show");
+  };
 
   render() {
     return (
       <Fragment>
-        <div className='modalBackground'></div>
+        <div className="modalBackground"></div>
         <div className={`detailsModal modal${this.props.showDetails.id}`}>
-          <span className="closeModal" onClick={this.closeModal}><FontAwesomeIcon icon={faPlus} /></span>
+          <span className="closeModal" onClick={this.closeModal}>
+            <FontAwesomeIcon icon={faPlus} />
+          </span>
           <h2>{this.props.showDetails.title}</h2>
           <h3>&#x2605; {this.props.showDetails.rating}/10</h3>
           <p className="modal">{this.props.showDetails.genre}</p>
-          <img src={this.props.showDetails.image} alt={`Poster for ${this.props.showDetails.title}`}></img>
-          <div className="modal" dangerouslySetInnerHTML={this.createSummary()} />
+          <img
+            src={this.props.showDetails.image}
+            alt={`Poster for ${this.props.showDetails.title}`}
+          ></img>
+          <div
+            className="modal"
+            dangerouslySetInnerHTML={this.createSummary()}
+          />
         </div>
       </Fragment>
-    )
+    );
   }
 }
 

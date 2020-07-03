@@ -7,50 +7,63 @@ import { faArrowCircleUp } from '@fortawesome/free-solid-svg-icons'
 import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons'
 
 class VoteButtons extends Component {
-
-  handleUpvote  = () => {
-    const currentRating = firebase.database().ref(this.props.listTitle).child(this.props.showKey).child('rating');
+  // Used to vote up TV show by 1
+  handleUpvote = () => {
+    const currentRating = firebase
+      .database()
+      .ref(this.props.listTitle)
+      .child(this.props.showKey)
+      .child("rating");
 
     let newData = null;
 
-    currentRating.on('value', (response) => {
-        let data = response.val();
-        if (data < 10) {
-          newData = data+1;
-        } else {
-          newData = 10
-        }
-    })
-    
-    currentRating.set(newData)    
-  }
+    // to ensure that shows cannot be upvoted to over 10
+    currentRating.on("value", (response) => {
+      let data = response.val();
+      if (data < 10) {
+        newData = data + 1;
+      } else {
+        newData = 10;
+      }
+    });
 
-  
+    currentRating.set(newData);
+  };
+
+  // Used to down vote TV show by 1
   handleDownvote = () => {
-    const currentRating = firebase.database().ref(this.props.listTitle).child(this.props.showKey).child('rating');
+    const currentRating = firebase
+      .database()
+      .ref(this.props.listTitle)
+      .child(this.props.showKey)
+      .child("rating");
 
     let newData = null;
 
-    currentRating.on('value', (response) => {
-        let data = response.val();
-        if (data > 0) {
-          newData = data - 1;
-        } else {
-          newData = 0
-        }
-    })
+    // to ensure that shows cannot be downvoted to under 0
+    currentRating.on("value", (response) => {
+      let data = response.val();
+      if (data > 0) {
+        newData = data - 1;
+      } else {
+        newData = 0;
+      }
+    });
 
-    currentRating.set(newData)
-  }
+    currentRating.set(newData);
+  };
 
-  
   render() {
-    return(
-        <Fragment>
-        <button className='upvote' onClick={this.handleUpvote}><FontAwesomeIcon icon={faArrowCircleUp} /></button>
-        <button className='downvote' onClick={this.handleDownvote}><FontAwesomeIcon icon={faArrowCircleDown} /></button>
-        </Fragment>
-    )
+    return (
+      <Fragment>
+        <button className="upvote" onClick={this.handleUpvote}>
+          <FontAwesomeIcon icon={faArrowCircleUp} />
+        </button>
+        <button className="downvote" onClick={this.handleDownvote}>
+          <FontAwesomeIcon icon={faArrowCircleDown} />
+        </button>
+      </Fragment>
+    );
   }
 }
 

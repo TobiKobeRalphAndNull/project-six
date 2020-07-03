@@ -319,7 +319,7 @@ header {
   background-color: #c4e39c;
 }
 
-header .wrapper {
+.headerContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,8 +336,24 @@ header .wrapper {
   padding: 40px 0px 40px 0px;
 }
 
+input {
+  min-width: 30vw;
+  padding: 15px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.inputButton {
+  background-color: #f77a9b;
+  padding: 15px 30px 15px 30px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+input, .inputButton {
+  border: none;
+}
+
 @media (max-width: 750px) {
-  header .wrapper {
+  .headerContent {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -362,6 +378,8 @@ header .wrapper {
 
 section.gallery {
   background-color: transparent;
+  min-height: 75vh;
+  padding: 40px 0px 40px 0px;
 }
 
 .searchResuts {
@@ -460,7 +478,6 @@ footer {
 section.slider {
   position: fixed;
   top: 0;
-  min-height: 100%;
   background-color: #c4e39c;
   border-right: #ffffff 1px solid;
   padding: 30px 0px;
@@ -468,6 +485,8 @@ section.slider {
   left: -1000px;
   -webkit-transition: all .5s;
   transition: all .5s;
+  height: 100vh;
+  overflow: scroll;
 }
 
 section.slider.show {
@@ -483,13 +502,15 @@ section.slider.show {
 
 .hamburgerMenu {
   position: fixed;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 20px;
   z-index: 10;
   font-size: 3rem;
   background-color: #c4e39c;
   padding: 10px;
   border-radius: 5px;
+  -webkit-filter: drop-shadow(3px 3px 3px gray);
+          filter: drop-shadow(3px 3px 3px gray);
 }
 
 .hamburgerMenu:hover,
@@ -511,24 +532,37 @@ div.listTitleContainer {
           justify-content: center;
 }
 
-button.expandList {
+li.tvList {
+  margin: 10px 0;
+  list-style-type: none;
+  display: none;
+}
+
+li.tvList.show {
+  display: block;
+}
+
+.collapseList {
   display: inline-block;
   border: none;
   background-color: #c4e39c;
   font-family: inherit;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  padding-bottom: 5px;
 }
 
-button.expandList:hover,
-button.expandList:focus {
+.collapseList:hover,
+.collapseList:focus {
   cursor: pointer;
   color: #00b6f9;
 }
 
-li.listItem {
-  margin: 10px 0;
-  list-style-type: none;
+.collapseList.show {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 h2.sliderTitle {
@@ -555,6 +589,26 @@ form.createList button {
   font-size: 3rem;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+.upvote, .downvote {
+  border: none;
+  background: none;
+  font-size: 3rem;
+}
+
+.downvote {
+  color: red;
+}
+
+.inputButton:hover, .inputButton:focus {
+  background: #00b6f9;
+  cursor: pointer;
+}
+
+.delete:hover, .delete:focus, a:hover, a:focus, .upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus {
+  color: #00b6f9;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -631,43 +685,12 @@ span.closeModal {
   display: block;
 }
 
-input {
-  min-width: 30vw;
-  padding: 15px;
-  border-radius: 10px 0px 0px 10px;
-}
-
-.inputButton {
-  background-color: #f77a9b;
-  padding: 15px 30px 15px 30px;
-  border-radius: 0px 10px 10px 0px;
-}
-
-input, .inputButton {
-  border: none;
-}
-
-.gallery {
-  padding: 40px 0px 40px 0px;
-}
-
-.upvote, .downvote {
-  border: none;
-  background: none;
-  font-size: 3rem;
-}
-
-.downvote {
-  color: red;
-}
-
-.inputButton:hover, .inputButton:focus {
-  background: #00b6f9;
-  cursor: pointer;
-}
-
-.delete:hover, .delete:focus, a:hover, a:focus, .upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus {
-  color: #00b6f9;
-  cursor: pointer;
+@media (min-width: 1600px) {
+  html {
+    font-size: 10px;
+  }
+  section.slider {
+    width: 500px;
+  }
 }
 /*# sourceMappingURL=App.css.map */

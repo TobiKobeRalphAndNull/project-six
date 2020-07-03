@@ -9,60 +9,12 @@
 @import 'showDetails';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Lato&display=swap');
 
-// .selectList {
-//   visibility:hidden;
-// }
+@media (min-width: 1600px) {
+  html {
+    font-size: 10px;
+  }
 
-// .selectList.show {
-//   visibility:visible 
-// }
-
-// .sliderList, .createList {
-//   display: none;
-// }
-
-// ^ temporarily hiding the slider to focus on the main page
-
-// search bar styles
-
-
-input {
-  min-width: 30vw;
-  padding: 15px;
-  border-radius: 10px 0px 0px 10px;
-}
-
-.inputButton {
-  background-color: $pink;
-  padding: 15px 30px 15px 30px;
-  border-radius: 0px 10px 10px 0px;
-}
-
-input, .inputButton {
-  border: none;
-}
-
-// gallery styles
-
-.gallery {
-  padding: 40px 0px 40px 0px;
-}
-
-// vote buttons 
-
-.upvote, .downvote {
-  border: none;
-  background: none;
-  font-size: 3rem;
-}
-.downvote {
-  color: red;
-}
-.inputButton:hover, .inputButton:focus{
-  background:$blue;
-  cursor: pointer;
-}
-.delete:hover, .delete:focus, a:hover,a:focus,.upvote:hover, .downvote:hover, .upvote:focus, .downvote:focus{
-  color:$blue;
-  cursor: pointer;
+  section.slider {
+    width: 500px;
+  }
 }
