@@ -613,7 +613,23 @@ form.createList button {
 
 @media (max-width: 768px) {
   section.slider {
-    width: 80%;
+    width: 60%;
+  }
+  section.slider .sliderList h2 {
+    font-size: 4rem;
+  }
+  section.slider .sliderList h3 {
+    font-size: 3rem;
+  }
+  section.slider .sliderList p {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  section.slider .collapseList {
+    font-size: 4rem;
+  }
+  section.slider .delete {
+    padding-bottom: 5px;
   }
 }
 
@@ -624,6 +640,11 @@ form.createList button {
   .gridContainer {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  form.createList input, form.createList button {
+    width: 80%;
+    border-radius: 15px;
+    margin: 5px 0;
   }
 }
 

@@ -97,6 +97,7 @@ form.createList input {
 form.createList button {
   width: 30%;
 }
+
 .delete,
 .deleteList {
   background: none;
@@ -129,7 +130,30 @@ form.createList button {
 
 @media (max-width: 768px) {
   section.slider {
-    width: 80%;
+    width: 60%;
+
+    .sliderList {
+      h2 {
+        font-size: 4rem;
+      }
+    
+      h3{
+        font-size: 3rem;
+      }
+
+      p{
+        font-size: 2rem;
+        margin: 1rem;
+      }
+    }
+
+    .collapseList {
+      font-size: 4rem;
+    }
+
+    .delete {
+      padding-bottom: 5px;
+    }
   }
 }
 
@@ -140,5 +164,13 @@ form.createList button {
 
   .gridContainer {
     grid-template-columns: 1fr;
+  }
+
+  form.createList {
+    input, button {
+      width: 80%;
+      border-radius: 15px;
+      margin: 5px 0;
+    }
   }
 }

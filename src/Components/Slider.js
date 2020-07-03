@@ -100,7 +100,7 @@ class Slider extends Component {
                   return (
                     <li key={item.showKey} className={`tvList ${s.actualListTitle}`}>
                       <h3>{item.title}</h3>
-                      <p>{item.rating}</p><button className="delete" onClick={() => this.handleDelete(s.actualListTitle, item.showKey)}><FontAwesomeIcon icon={faPlus} /></button>
+                      <p>&#x2605; {item.rating}</p><button className="delete" onClick={() => this.handleDelete(s.actualListTitle, item.showKey)}><FontAwesomeIcon icon={faPlus} /></button>
                       <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle}/>
                     </li>
                   )
