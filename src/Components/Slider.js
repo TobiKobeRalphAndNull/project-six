@@ -72,28 +72,32 @@ class Slider extends Component {
     return (
       <Fragment>
         <h2 className="sliderTitle">My TV Show Lists</h2>
-        {this.state.myListTitles.map((s) => {
-          return (
-            <div className="sliderList">
-              <div className="listTitleContainer">
-                <h2>{s.actualListTitle}</h2>
-                <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button>
-                <button className="delete" onClick={() => this.handleDelete(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
+
+        <div className="gridContainer">
+          {this.state.myListTitles.map((s) => {
+            return (
+              <div className="sliderList">
+                <div className="listTitleContainer">
+                  <h2>{s.actualListTitle}</h2>
+                  {/* <button className="expandList" onClick={this.expandList}><FontAwesomeIcon icon={faPlus} /></button> */}
+                  <button className="delete" onClick={() => this.handleDelete(s.actualListTitle)}><FontAwesomeIcon icon={faPlus} /></button>
+                </div>
+                {this.state.myLists.map((item) => {
+                  if (item.listTitleRecord === s.actualListTitle) {
+                    return (
+                      <li key={item.showKey} className={`listItem ${s.actualListTitle}`}>
+                        <h3>{item.title}</h3>
+                        <p>{item.rating}</p><button className="delete" onClick={() => this.handleDelete(s.actualListTitle, item.showKey)}><FontAwesomeIcon icon={faPlus} /></button>
+                        <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle} />
+                      </li>
+                    )
+                  }
+                })}
               </div>
-              {this.state.myLists.map((item) => {
-                if (item.listTitleRecord === s.actualListTitle) {
-                  return (
-                    <li key={item.showKey} className={`listItem ${s.actualListTitle}`}>
-                      <h3>{item.title}</h3>
-                      <p>{item.rating}</p><button className="delete" onClick={() => this.handleDelete(s.actualListTitle, item.showKey)}><FontAwesomeIcon icon={faPlus} /></button>
-                      <VoteButtons showKey={item.showKey} listTitle={s.actualListTitle}/>
-                    </li>
-                  )
-                }
-              })}
-            </div>  
-          )
-        })}
+            )
+          })}
+        </div>
+
         <CreateList />
       </Fragment>
     )

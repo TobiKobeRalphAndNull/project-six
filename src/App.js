@@ -66,7 +66,7 @@ class App extends Component {
         relevantShows: searchResults,
       })
     }, (error) => {
-      // If error/no results received, show user error tile
+      // If error received, show user error tile
       console.log('Error:', error)
       const searchResults = [];
       searchResults.push({
