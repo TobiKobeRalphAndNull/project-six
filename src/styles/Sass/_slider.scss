@@ -17,6 +17,11 @@ section.slider.show {
   left: 0;
 }
 
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .hamburgerMenu {
   position: fixed;
   top: 30px;
@@ -67,6 +72,10 @@ h2.sliderTitle {
   font-size: 3rem;
 }
 
+form.createList {
+  margin-top: 20px;
+}
+
 form.createList input {
   min-width: 0;
   width: 60%;
@@ -81,4 +90,22 @@ form.createList button {
   border:none;
   font-size: 3rem;
   transform:rotate(45deg);
+}
+
+// Medua Queries
+
+@media (max-width: 768px) {
+  section.slider {
+    width: 80%;
+  }
+}
+
+@media (max-width: 550px) {
+  section.slider {
+    width: 90%;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
 }
