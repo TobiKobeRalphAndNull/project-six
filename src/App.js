@@ -103,7 +103,7 @@ class App extends Component {
         <section className='gallery wrapper'>
           <Gallery relevantShows={this.state.relevantShows} />
         </section>
-        <footer><p><a href="https://ruiwd.me">Jerry Dong</a>, <a href="https://lawrencehebia.com">Lawrence Hebia</a>, <a href="http://www.shondamoshis.com">Shonda Moshis</a>, <a href="http://www.tabithapoeze.com">Tabitha Poeze</a> &copy; 2020</p></footer>
+        <footer><p><a href="https://ruiwd.me">Rui Wang-Dong</a>, <a href="https://lawrencehebia.com">Lawrence Hebia</a>, <a href="http://www.shondamoshis.com">Shonda Moshis</a>, <a href="http://www.tabithapoeze.com">Tabitha Poeze</a> &copy; 2020</p></footer>
       </Fragment>
     );
   }
